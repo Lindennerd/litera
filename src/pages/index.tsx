@@ -1,12 +1,11 @@
 import { type NextPage } from "next";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
+import Form from "../components/Form";
 
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
-
   return (
     <>
       <Head>
@@ -14,8 +13,8 @@ const Home: NextPage = () => {
         <meta name="description" content="Make long twe" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-       
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#022d6d] to-[#131633]">
+        <Form onSendTweet={() => {}}/>
       </main>
     </>
   );
